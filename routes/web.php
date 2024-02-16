@@ -18,6 +18,9 @@ use App\Http\Controllers\ResultController;
 //     return view('welcome');
 // });
 
-Route::get('/', [ResultController::class, 'index']);
+Route::get('/', [ResultController::class, 'index'])->name('home');
 
 Route::get('add/product', [ResultController::class, 'addProduct'])->name('product.form');
+Route::post('save/product', [ResultController::class, 'saveProduct'])->name('save.product');
+Route::get('edit/product/{id}', [ResultController::class, 'editProduct'])->name('edit.product');
+Route::post('destroye', [ResultController::class, 'destroyeProduct'])->name('destroye.product');

@@ -9,7 +9,7 @@ class ProductModel extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $table = 'products';
     protected $fillable = ['title', 'author', 'publish_date', 'price'];
-    public $timestamp = false;
 }

@@ -65,7 +65,7 @@
                 <div class="menu_section">
                   <h3>General</h3>
                   <ul class="nav side-menu">
-                    <li><a href="{{route('home')}}"><i class="fa fa-shopping-cart"></i> Products</a>
+                    <li><a href="{{route('home')}}"><i class="fa fa-shopping-cart"></i> Products <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                         <li><a href="index.html">Dashboard</a></li>
                         <li><a href="index2.html">Dashboard2</a></li>
@@ -104,10 +104,10 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3> <small>Add your product bellow</small></h3>
+                <h3>Update your product</small></h3>
               </div>
 
-              <div class="title_right text-end">
+              <div class="title_right">
                 <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for...">
@@ -125,7 +125,7 @@
                 <div class="col-md-12 col-sm-12 ">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Add Product </h2>
+                            <h2>Update Product </h2>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
@@ -136,7 +136,8 @@
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Title <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input type="text" id="title" name="title" class="form-control ">
+                                        <input type="hidden" name="p_id" value="{{$id->id}}">
+                                        <input type="text" id="title" name="title" class="form-control " value="{{$id->title}}">
                                         @if($errors->has('title'))
                                             <div class="error">{{ $errors->first('title') }}</div>
                                         @endif
@@ -146,7 +147,7 @@
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Author <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input type="text" id="author" name="author" class="form-control">
+                                        <input type="text" id="author" name="author" class="form-control" value="{{$id->author}}">
                                         @if($errors->has('author'))
                                             <div class="error">{{ $errors->first('author') }}</div>
                                         @endif
@@ -155,7 +156,7 @@
                                 <div class="item form-group">
                                     <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Publish Date</label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input id="publish_date" class="form-control" type="date" name="publish_date">
+                                        <input id="publish_date" class="form-control" type="date" name="publish_date" value="{{$id->publish_date}}">
                                         @if($errors->has('publish_date'))
                                             <div class="error">{{ $errors->first('publish_date') }}</div>
                                         @endif
@@ -164,7 +165,7 @@
                                 <div class="item form-group">
                                     <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Price</label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input id="price" class="form-control" type="text" name="price">
+                                        <input id="price" class="form-control" type="text" name="price" value="{{$id->price}}">
                                         @if($errors->has('price'))
                                             <div class="error">{{ $errors->first('price') }}</div>
                                         @endif
