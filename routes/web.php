@@ -18,4 +18,6 @@ use App\Http\Controllers\ResultController;
 //     return view('welcome');
 // });
 
-Route::get('/', [ResultController::class, 'apiResults']);
+Route::get('/', [ResultController::class, 'index']);
+
+Route::get('add/product', [ResultController::class, 'addProduct'])->name('product.form');
